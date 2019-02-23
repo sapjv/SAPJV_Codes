@@ -1,4 +1,8 @@
-https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/algorithm/teachers-dilemma-3/
+/*
+https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/
+algorithm/teachers-dilemma-3/
+
+*/
 
 #include<bits/stdc++.h>
 int parent[100000];
