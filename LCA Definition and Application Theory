@@ -1,6 +1,6 @@
-Lowest Common ancestor ( LCA ) :	The LCA algorithm tries to do a simple thing: Figure out paths from the two nodes in question to the 
-root. Now, these two paths would have a common suffix (assuming that the path ends at the root). The LCA is the first node where the
-suffix begins. 
+Lowest Common ancestor ( LCA ) :	The LCA algorithm tries to do a simple thing: Figure out paths from the two nodes in 
+question to the root. Now, these two paths would have a common suffix (assuming that the path ends at the root). The LCA is the 
+first node where the suffix begins. 
 
 Consider the following tree : 
 
@@ -54,7 +54,3 @@ where h is the height of the tree (length of longest path from a leaf to the roo
 processing trees so that lowest common ancestors may be found more quickly. Tarjan's off-line lowest common ancestors algorithm,
 for example, preprocesses a tree in linear time to provide constant-time LCA queries. In general DAGs, similar algorithms exist, 
 but with super-linear complexity.
-
-
-
-Language Version:  GCC 8.1.0
