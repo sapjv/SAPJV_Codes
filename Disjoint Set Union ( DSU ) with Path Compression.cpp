@@ -48,7 +48,7 @@ int main()
         size[i]=1;
     }
     
-	for(int i=0;i<m;i++)
+    for(int i=0;i<m;i++)
     {
         int x,y;
         cin>>x>>y;
