@@ -8,11 +8,11 @@ int size[100000];
 inline int root(int x)
 {
     while(parent[x]!=x)
-	{
-		parent[x] = parent[parent[x]];			// path compression
-		x = parent[x];
-	}
-	return x;
+    {
+	parent[x] = parent[parent[x]];		// Path Compression
+	x = parent[x];
+    }
+    return x;
 }
 
 void Union(int A,int B)
@@ -20,10 +20,10 @@ void Union(int A,int B)
     int root_A = root(A);
     int root_B = root(B);
     
-	if(root_A==root_B)
+    if(root_A==root_B)
     return;
     
-	if(root_A<root_B)
+    if(root_A<root_B)
     {
         parent[root_A]=root_B;
         size[root_B]+=size[root_A];
@@ -56,19 +56,19 @@ int main()
     }
     
     int q;
-	cin>>q;
-	for(int i=1;i<=q;i++)
-	{
-		int x,y;
-		cin>>x>>y;
-		
-		int root_x = root(x-1);
-		int root_y = root(y-1);
-		
-		if(root_x == root_y)
-		cout<<"Yes\n";
-		else
-		cout<<"No\n";
-	}
+    cin>>q;
+    for(int i=1;i<=q;i++)
+    {
+	int x,y;
+	cin>>x>>y;
+
+	int root_x = root(x-1);
+	int root_y = root(y-1);
+
+	if(root_x == root_y)
+	cout<<"Yes\n";
+	else
+	cout<<"No\n";
+    } 
 }
 
