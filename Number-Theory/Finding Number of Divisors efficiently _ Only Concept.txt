@@ -1,0 +1,17 @@
+We can find total number of divisors of a number efficiently : All we need to do is find prime factorization of that number and then
+add 1 to all exponenets ( powers ) of all prime factors and Then Finally : Multiply all exponents.
+
+Example : the prime factorization of 144 = 2^4 * 3^2
+Here , exponents are 4,2
+
+So , Now , add 1 to all exponents : 4+1 , 2+1
+
+i.e., = 5 , 3
+
+So , Finally , there are 5 x 3 = 15 divisors of 144.
+
+-----------------------------------
+
+In general, if you have the prime factorization of the number n, then to calculate how many divisors it has, you take all the exponents in the 
+factorization, add 1 to each, and then multiply these "exponents + 1"s together.
+
