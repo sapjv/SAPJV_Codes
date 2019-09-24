@@ -1,0 +1,56 @@
+Lowest Common ancestor ( LCA ) :	The LCA algorithm tries to do a simple thing: Figure out paths from the two nodes in 
+question to the root. Now, these two paths would have a common suffix (assuming that the path ends at the root). The LCA is the 
+first node where the suffix begins. 
+
+Consider the following tree : 
+
+                            	           r * 
+                                            / \
+                                         s *   *
+                                          /  \
+                                       u *    * t
+                                        /    / \
+                                       *  v *   *
+                                           / \
+                                          *   *
+			  
+			  
+
+In order to find the LCA(u, v) we proceed as follows:
+
+Path from u to root: Path(u, r) = usr
+
+Path from v to root: Path(v, r) = vtsr
+
+Now, we check for the common suffix:
+
+Common suffix: 'sr'
+
+Therefore LCA(u, v) = first node of the suffix = s
+
+Note the actual algorithms do not go all the way up to the root. They use Disjoint-Set data structures to stop when they reach s.
+-----------------------
+Real World Application of LCA :  Let’s create a group of people that have commented on a topic, tweeted/retweeted, posted in 
+Facebook,etc sorted by time. If we create a graph based on connections such as friends/followers and time, we can attempt to 
+traverse it to find who influenced any two people. 
+
+------------------------------------------------------
+
+Wikipedia of LCA : 
+
+the lowest common ancestor (LCA) of two nodes v and w in a tree or directed acyclic graph (DAG) T is the lowest (i.e. deepest) node
+that has both v and w as descendants, where we define each node to be a descendant of itself (so if v has a direct connection 
+from w, w is the lowest common ancestor).
+
+The LCA of v and w in T is the shared ancestor of v and w that is located farthest from the root. Computation of lowest common
+ancestors may be useful, for instance, as part of a procedure for determining the distance between pairs of nodes in a tree: the
+distance from v to w can be computed as the distance from the root to v, plus the distance from the root to w, minus twice the 
+distance from the root to their lowest common ancestor (Djidjev, Pantziou & Zaroliagis 1991). In ontologies, the lowest common 
+ancestor is also known as the least common subsumer.
+
+In a tree data structure where each node points to its parent, the lowest common ancestor can be easily determined by finding the 
+first intersection of the paths from v and w to the root. In general, the computational time required for this algorithm is O(h) 
+where h is the height of the tree (length of longest path from a leaf to the root). However, there exist several algorithms for 
+processing trees so that lowest common ancestors may be found more quickly. Tarjan's off-line lowest common ancestors algorithm,
+for example, preprocesses a tree in linear time to provide constant-time LCA queries. In general DAGs, similar algorithms exist, 
+but with super-linear complexity.
