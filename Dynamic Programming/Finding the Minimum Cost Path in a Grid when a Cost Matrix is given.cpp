@@ -37,6 +37,8 @@ i.e. cost of reaching cell (i,0) = Cost of reaching cell (i-1,0) + Cost of visit
 
 Other values can be computed from them. See the code below for more understanding.
 
+Time Complexity : O( number of rows * number of columns ) => O(m*n)
+
 */
 
 
