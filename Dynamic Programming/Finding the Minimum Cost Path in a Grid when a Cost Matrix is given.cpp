@@ -21,7 +21,7 @@ important conditions which need to be satisfied for a dynamic programming proble
 Optimal Sub-structure:- Optimal solution to a problem involves optimal solutions to sub-problems.
 
 Overlapping Sub-problems:- Subproblems once computed can be stored in a table for further use. This saves 
-						   the time needed to compute the same sub-problems again and again.
+			   the time needed to compute the same sub-problems again and again.
 
 The problem of finding the min-Cost Path is now almost solved. We now compute the values of the base 
 cases: the topmost row and the leftmost column. For the topmost row, a cell can be reached only from 
