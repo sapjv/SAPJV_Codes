@@ -5,6 +5,8 @@
 Task : Given a directed graph, check whether the graph contains a cycle or not. Your function should 
 return true if the given graph contains at least one cycle, else return false.
 
+Useful Video Link :  https://www.youtube.com/watch?v=joqmqvHC_Bo
+
 Depth First Traversal can be used to detect a cycle in a Graph. DFS for a connected graph produces a tree. 
 There is a cycle in a graph only if there is a back edge present in the graph. A back edge is an edge that 
 is from a node to itself (self-loop) or one of its ancestor in the tree produced by DFS.
