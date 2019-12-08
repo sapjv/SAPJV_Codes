@@ -3,7 +3,7 @@
 		### Edit Distance ( The Levenshtein distance ) using Dynamic Programming ###
 	
 Given two strings str1 and str2 and below operations that can performed on str1. Find minimum number of 
-edits (operations) required to convert ‘str1’ into ‘str2’.
+edits (operations) required to convert â€˜str1â€™ into â€˜str2â€™.
 
 1. Insert
 2. Remove
@@ -35,7 +35,7 @@ Output:  1 ( We can convert str1 into str2 by replacing 'a' with 'u' )
 
 Input:   str1 = "sunday", str2 = "saturday"
 Output:  3 ( Last three and first characters are same.  We basically need to convert "un" to "atur".  
-			 This can be done using below three operations. Replace 'n' with 'r', insert t, insert a )
+	     This can be done using below three operations. Replace 'n' with 'r', insert t, insert a )
 
 
 Time Complexity: O(m*n)		// where m = length of first string , n = length of second string
@@ -73,8 +73,8 @@ int editDistance(string x,string y,int lenX,int lenY)
 			// If the last character is different, consider all possibilities and find the minimum 
 			else
 				dp[i][j] = 1 + min(dp[i-1][j],		  // Remove
-									min(dp[i][j-1],		  // Insert 
-										dp[i-1][j-1]));		 // Replace
+						   min(dp[i][j-1],		  // Insert 
+							dp[i-1][j-1]));		 // Replace
 		}
 	}
 		
