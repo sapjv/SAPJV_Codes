@@ -4,7 +4,7 @@
 
 Question : What is a Mother Vertex ?
 Answer : A mother vertex in a graph G = (V,E) is a vertex v such that all other vertices in G can be 
-		 reached by a path from v.
+	 reached by a path from v.
 
 Example : https://media.geeksforgeeks.org/wp-content/cdn-uploads/mother1.png
 
@@ -19,23 +19,23 @@ Useful Link : https://www.geeksforgeeks.org/find-a-mother-vertex-in-a-graph/
 How to find mother vertex?
 
 Case 1:- Undirected Connected Graph : In this case, all the vertices are mother vertices as we can 
-		 reach to all the other nodes in the graph.
+	 reach to all the other nodes in the graph.
 		 
 Case 2:- Undirected/Directed Disconnected Graph : In this case, there is no mother vertices as we 
-		 cannot reach to all the other nodes in the graph.
+	 cannot reach to all the other nodes in the graph.
 
 Case 3:- Directed Connected Graph : In this case, we have to find a vertex -v in the graph such that 
-		 we can reach to all the other nodes in the graph through a directed path.
+	 we can reach to all the other nodes in the graph through a directed path.
 
 A Naive approach : A trivial approach will be to perform a DFS/BFS on all the vertices and find whether 
-				   we can reach all the vertices from that vertex. This approach takes O(V(E+V)) time, 
-				   which is very inefficient for large graphs.
+		   we can reach all the vertices from that vertex. This approach takes O(V(E+V)) time, 
+		   which is very inefficient for large graphs.
 
 
 Question : Can we do better ?
-Answer :  We can find a mother vertex in O(V+E) time. The idea is based on Kosaraju’s Strongly Connected 
-		  Component Algorithm. In a graph of strongly connected components, mother vertices are always 
-		  vertices of source component in component graph. The idea is based on below fact.
+Answer :  We can find a mother vertex in O(V+E) time. The idea is based on Kosarajuâ€™s Strongly Connected 
+	  Component Algorithm. In a graph of strongly connected components, mother vertices are always 
+	  vertices of source component in component graph. The idea is based on below fact.
 
 If there exist mother vertex (or vertices), then one of the mother vertices is the last finished vertex 
 in DFS. (Or a mother vertex has the maximum finish time in DFS traversal).
@@ -45,8 +45,8 @@ the vertex have been visited.
 
 Question : How does the above idea work ?
 Answer :  Let the last finished vertex be v. Basically, we need to prove that there cannot be an edge from 
-		  another vertex u to v if u is not another mother vertex (Or there cannot exist a non-mother vertex 
-		  u such that u-?v is an edge). There can be two possibilities.
+	  another vertex u to v if u is not another mother vertex (Or there cannot exist a non-mother vertex 
+	  u such that u-?v is an edge). There can be two possibilities.
 
 Recursive DFS call is made for u before v. If an edge u-?v exists, then v must have finished before u because 
 v is reachable through u and a vertex finishes after all its descendants. Recursive DFS call is made for v 
@@ -57,10 +57,10 @@ vertex).
 
 Algorithm :
 
-Step-1 : Do DFS traversal of the given graph. While doing traversal keep track of last finished vertex ‘v’. This 
-		 step takes O(V+E) time.
+Step-1 : Do DFS traversal of the given graph. While doing traversal keep track of last finished vertex â€˜vâ€™. This 
+	 step takes O(V+E) time.
 Step-2 : If there exist mother vertex (or vetices), then v must be one (or one of them). Check if v is a mother 
-		 vertex by doing DFS/BFS from v. This step also takes O(V+E) time.
+	 vertex by doing DFS/BFS from v. This step also takes O(V+E) time.
 
 ------------
 
@@ -112,13 +112,13 @@ int findMotherVertex()
 		}
 	}
 	
-    // Reset all values in visited[] as false 
+   	// Reset all values in visited[] as false 
 	visited.assign(n,false);
   
   	// doing DFS beginning from lastFinishedNode to check if all vertices are reachable from it or not.
 	dfs(lastFinishedNode);
 	
-    // Now check if lastFinishedNode is actually a mother vertex (or graph has a mother vertex).  We basically check 
+    	// Now check if lastFinishedNode is actually a mother vertex (or graph has a mother vertex).  We basically check 
 	// if every vertex is reachable from lastFinishedNode or not.
 	for(int i=0;i<n;i++)
 	{
