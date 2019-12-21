@@ -5,7 +5,7 @@
 Useful Link : https://www.geeksforgeeks.org/count-the-number-of-nodes-at-a-given-level-in-a-tree-using-dfs/
 		
 Approach: The idea is to traverse the graph in a DFS manner. Take two variables, node_count and 
-		  curr_level. Whenever the curr_level = L increment the value of the node_count.
+	  curr_level. Whenever the curr_level = L increment the value of the node_count.
 
 Below is the implementation of the above approach : 
 
