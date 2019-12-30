@@ -10,7 +10,7 @@ Task : Given a boolean 2D matrix, find the number of islands. A group of connect
 For example, the below matrix contains 5 islands.
 
 Input : matrix[][] = {{1, 1, 0, 0, 0},
-                	  {0, 1, 0, 0, 1},
+               	      {0, 1, 0, 0, 1},
                       {1, 0, 0, 1, 1},
                       {0, 0, 0, 0, 0},
                       {1, 0, 1, 0, 1}}
@@ -119,5 +119,5 @@ int main()
 			cin>>matrix[i][j];
 	}
   
-    countIslands(); 
+        countIslands(); 
 }
