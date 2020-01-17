@@ -4,12 +4,12 @@ This is the correct and optimised code for Prim's Algorithm
 
 Useful Link : https://www.geeksforgeeks.org/prims-algorithm-using-priority_queue-stl/
 
-In Prim’s algorithm, we need a priority queue and below operations on priority queue :
+In Primâ€™s algorithm, we need a priority queue and below operations on priority queue :
 
 1. ExtractMin : from all those vertices which have not yet been included in MST, we need to 
-				get vertex with minimum distance value.
+		get vertex with minimum distance value.
 2. DecreaseKey : After extracting vertex we need to update keys of its adjacent vertices, and 
-				if new key is smaller, then update that in data structure.
+		if new key is smaller, then update that in data structure.
 					
 The algorithm discussed here can be modified so that decrease key is never required. The idea is, 
 not to insert all vertices in priority queue, but only those which are not MST and have been 
@@ -35,16 +35,16 @@ in a separate boolean array inMST[].
     b) Include u in MST using inMST[u] = true.
 
     c) Loop through all adjacent of u and do following for every vertex v.
-		   If weight of edge (u,v) is smaller than distance of v and v is not already in MST
-           i.e., If inMST[v] = false && distance[v] > weight(u, v)
+	If weight of edge (u,v) is smaller than distance of v and v is not already in MST
+        i.e., If inMST[v] = false && distance[v] > weight(u, v)
                (i) Update distance of v, i.e., do  distance[v] = weight(u, v)
                (ii) Insert v into the pq 
                (iv) parent[v] = u
                
 6) Print MST edges using parent array.
 
-Time Complexity : The time complexity of the Prim’s Algorithm is O(E Log V) as there will be at 
-most O(E) vertices in priority queue and O(LogE) is same as O(LogV). Unlike Dijkstra’s implementation, 
+Time Complexity : The time complexity of the Primâ€™s Algorithm is O(E Log V) as there will be at 
+most O(E) vertices in priority queue and O(LogE) is same as O(LogV). Unlike Dijkstraâ€™s implementation, 
 a boolean array inMST[] is mandatory here because the distance values of newly inserted items can be 
 less than the distance values of extracted items. So we must not consider extracted items.
 
@@ -80,8 +80,8 @@ lli prim(int start)
 	while(!min_pq.empty())
 	{
 		// The first vertex in pair is the minimum distance vertex, extract it from priority queue. 
-        // vertex label is stored in second of pair (it has to be done this way to keep the vertices 
-        // sorted distance (distance must be first item in pair) 
+        	// vertex label is stored in second of pair (it has to be done this way to keep the vertices 
+        	// sorted distance (distance must be first item in pair) 
 		int u = min_pq.top().second;
 		min_pq.pop();
 		
@@ -115,8 +115,8 @@ lli prim(int start)
 	
 	// Printing edges of MST using parent array 
 	cout<<"Edges in MST are : "<<"\n";
-    for (int i=1;i<=nodes;i++) 
-        cout<<parent[i]<<"--"<<i<<"\n"; 
+    	for (int i=1;i<=nodes;i++) 
+        	cout<<parent[i]<<"--"<<i<<"\n"; 
 	
 	return minimumCost;
 }
