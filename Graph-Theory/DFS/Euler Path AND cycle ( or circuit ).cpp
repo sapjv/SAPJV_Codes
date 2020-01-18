@@ -7,8 +7,8 @@ Eulerian Path :  Eulerian Path is a path in graph that visits every edge exactly
 Eulerian Circuit :  Eulerian Circuit is an Eulerian Path which starts and ends on the same vertex.
 
 Question :  How to find whether a given graph is Eulerian or not ?
-Answer :  The problem is same as following question. ìIs it possible to draw a given graph without 
-lifting pencil from the paper and without tracing any of the edges more than onceî.
+Answer :  The problem is same as following question. ‚ÄúIs it possible to draw a given graph without 
+lifting pencil from the paper and without tracing any of the edges more than once‚Äù.
 
 A graph is called Eulerian if it has an Eulerian Cycle and called Semi-Eulerian if it has an Eulerian 
 Path. The problem seems similar to Hamiltonian Path which is NP complete problem for a general graph. 
@@ -19,8 +19,8 @@ Following are some interesting properties of undirected graphs with an Eulerian 
 use these properties to find whether a graph is Eulerian or not :
 
 (A) Eulerian Cycle :  An undirected graph has Eulerian cycle if following two conditions are true.
-	a) All vertices with non-zero degree are connected. We donít care about vertices with zero degree 
-	   because they donít belong to Eulerian Cycle or Path (we only consider all edges).
+	a) All vertices with non-zero degree are connected. We don‚Äôt care about vertices with zero degree 
+	   because they don‚Äôt belong to Eulerian Cycle or Path (we only consider all edges).
 	b) All vertices have even degree.
 
 (B) Eulerian Path :  An undirected graph has Eulerian Path if following two conditions are true.
@@ -38,8 +38,8 @@ Note that a graph with no edges is considered Eulerian because there are no edge
 
 Question :  How does this work ?
 Answer :  In Eulerian path, each time we visit a vertex v, we walk through two unvisited edges with 
-		  one end point as v. Therefore, all middle vertices in Eulerian Path must have even degree. For 
-		  Eulerian Cycle, any vertex can be middle vertex, therefore all vertices must have even degree.
+	  one end point as v. Therefore, all middle vertices in Eulerian Path must have even degree. For 
+	  Eulerian Cycle, any vertex can be middle vertex, therefore all vertices must have even degree.
 
 */
 
@@ -137,10 +137,10 @@ int main()
 	
 	if(ans == 0)
 		cout<<"Graph is not Eulerian\n"; 
-    else if(ans == 1) 
-        cout<<"Graph has a Euler Path (Semi-Eulerian) \n"; 
-    else
-        cout<<"Graph has a Euler Cycle or Circuit (Eulerian)\n"; 
+    	else if(ans == 1) 
+        	cout<<"Graph has a Euler Path (Semi-Eulerian) \n"; 
+    	else
+        	cout<<"Graph has a Euler Cycle or Circuit (Eulerian)\n"; 
 }
 
 
