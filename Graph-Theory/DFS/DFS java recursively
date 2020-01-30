@@ -1,0 +1,42 @@
+import java.util.*;
+public class Graph
+{
+    static LinkedList<Integer> adjList[];
+    
+    static void dfs(int source,boolean visited[])
+    {
+        visited[source] = true;
+        System.out.print(source+" ");
+        Iterator<Integer> i = adjList[source].listIterator(); 
+        while(i.hasNext()) 
+        { 
+            int n = i.next(); 
+            if (!visited[n]) 
+                dfs(n, visited); 
+        }
+    }
+    
+    public static void main(String []args)
+    {
+        Scanner obj = new Scanner(System.in);
+        
+        int n = obj.nextInt();
+        int m = obj.nextInt();
+        
+        adjList = new LinkedList[n]; 
+        for (int i=0; i<n; ++i) 
+            adjList[i] = new LinkedList(); 
+        
+        for(int i=0;i<m;i++)
+        {
+            int u = obj.nextInt();
+            int v = obj.nextInt();
+            adjList[u].add(v);
+            adjList[v].add(u);
+        }
+        
+        boolean[] visited = new boolean[n];
+        Graph g = new Graph();
+        g.dfs(0,visited);
+    }
+}
