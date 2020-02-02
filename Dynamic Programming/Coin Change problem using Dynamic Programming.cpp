@@ -18,25 +18,25 @@ void change(int amount)
     int dp[10][amount+1];
     
     for(int i=0;i<=amount;i++)
-		dp[0][i]=i;
+	dp[0][i]=i;
     
     for(int i=1;i<10;i++)
     {
         for(int j=0;j<=amount;j++)
         {
             if(j>=coins[i])
-				dp[i][j]=min(dp[i-1][j],dp[i][j-coins[i]]+1);
+		dp[i][j]=min(dp[i-1][j],dp[i][j-coins[i]]+1);
             else
-				dp[i][j]=dp[i-1][j];
+		dp[i][j]=dp[i-1][j];
         }
     }
     
     // printing the denominations
-	int i = 9 , j = amount;
+    int i = 9 , j = amount;
     while(i>=0 && j>0)
     {
         if(dp[i][j] == dp[i-1][j])
-			i = i-1;
+	     i = i-1;
         else
         {
             cout << coins[i] << " ";
