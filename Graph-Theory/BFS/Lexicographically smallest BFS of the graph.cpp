@@ -28,9 +28,9 @@ Input-2: N = 3, M = 2
 Output : 1 2 3 
 
 Approach: Instead of doing a normal BFS traversal on the graph, we can use a priority 
-queue(min heap) instead of a simple queue. When a node is visited add its adjacent 
-nodes into the priority queue. Every time, we visit a new node, it will be the one 
-with the smallest index in the priority queue. Print the nodes when every time we 
+queue(min heap) or set STL instead of a simple queue. When a node is visited add its adjacent 
+nodes into the priority queue or in the set STL. Every time, we visit a new node, it will be the one 
+with the smallest index in the priority queue or in the set STL. Print the nodes when every time we 
 visit them starting from 1.
 
 */
@@ -52,6 +52,10 @@ typedef pair<int,int> PII;
 vector<bool> visited(M);
 vector<int> adjList[M];
 
+// note that both below bfs traversal will give correct lexigraphically smallest traversal of the graph.
+// we can use any one of them
+
+// using min priority_queue STL
 void bfs(int source)
 {
     priority_queue<int,vector<int>,greater<int> > min_pq;
@@ -72,6 +76,29 @@ void bfs(int source)
         }
     }
 }
+
+// using set STL
+void bfs(int source)
+{
+    set<int> s;
+    s.insert(1);
+    visited[source] = true;
+    while((int)s.size()>0)
+    {
+        int current = *s.begin();
+        s.erase(s.begin());
+        cout<<current<<" ";
+        for(int x:adjList[current])
+        {
+            if(!visited[x])
+            {   
+                visited[x] = true;
+                s.insert(x);
+            }
+        }
+    }
+}
+
 
 int main()
 {
@@ -96,6 +123,6 @@ int main()
     for(int i=1;i<=n;i++)
     {
         if(!visited[i])
-            bfs(i);
+            bfs(i);         // we can use any of the above BFS traversal ( using set STL or using min priority queue STL )
     }
 }
