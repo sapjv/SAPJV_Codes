@@ -1,3 +1,5 @@
+
+
 lli gcd (lli a, lli b) 
 {
     if (b == 0)
@@ -7,7 +9,12 @@ lli gcd (lli a, lli b)
 }
 
 
+
+
 lli lcm (lli a, lli b) 
 {
     return (a / gcd(a, b)) * b;              // or we can write it as  ( (a*b) / gcd(a,b) )
 }
+
+
+
