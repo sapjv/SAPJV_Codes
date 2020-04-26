@@ -37,16 +37,8 @@ lli modExp(lli a, lli b, lli M)
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        lli a,b,MOD;
-        cin>>a>>b>>MOD;
-        lli ans = modExp(a,b,MOD);
-        cout<<ans<<"\n";
-    }
+     lli a,b,MOD;
+     cin>>a>>b>>MOD;
+     lli ans = modExp(a,b,MOD);
+     cout<<ans<<"\n";
 }
