@@ -38,9 +38,9 @@ C++ Code for printing all the subsets ( power set ) of the array :
 
 int main()
 {
-    int arr[] = {1,2,3,4};
+    int arr[] = {1,2,3,4};        // note that the array size is 4
     
-    int pow_set_size = pow(2,4);        // Please take care of overflow by yourself
+    int pow_set_size = pow(2,4);       // Here 4 is the array size. Also, Please take care of overflow by yourself
   
     /*Run from counter 000..0 to 111..1*/
     for(int counter = 0; counter < pow_set_size; counter++) 
