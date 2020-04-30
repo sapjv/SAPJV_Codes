@@ -31,6 +31,10 @@ Value of Counter            Subset
     101                    -> ac
     110                    -> bc
     111                    -> abc
+    
+--------------------
+
+Time Complexity: O(n*(2^n))
 
 */
 
