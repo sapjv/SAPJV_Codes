@@ -11,6 +11,8 @@ Useful Videos Link for Matrix Chain Multiplication :
 
 Practice Question :  https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication/0
 
+Time Complexity :  O(n^3) for both Top Down and Bottom Up approach
+
 */
 
 //---------------------------------------------
@@ -21,7 +23,7 @@ Practice Question :  https://practice.geeksforgeeks.org/problems/matrix-chain-mu
 int a[101];
 lli dp[101][101];
 
-lli matrixChain(int i,int j)
+lli matrixChainTopDown(int i,int j)
 {
 	if(i>=j)
 		return 0;
@@ -32,7 +34,7 @@ lli matrixChain(int i,int j)
 	lli temp = INT_MAX;
 	for(int k=i;k<j;k++)
 	{
-		lli current = matrixChain(i,k) + matrixChain(k+1,j) + a[i-1]*a[j]*a[k];
+		lli current = matrixChainTopDown(i,k) + matrixChainTopDown(k+1,j) + a[i-1]*a[j]*a[k];
 		if(temp>current)
 			temp = current;
 	}
@@ -57,7 +59,7 @@ int main()
 
 		memset(dp,-1,sizeof(dp));
 		
-		lli ans = matrixChain(1,n-1);
+		lli ans = matrixChainTopDown(1,n-1);
 		
 		cout<<ans<<"\n";
 	} 
@@ -67,3 +69,28 @@ int main()
 
 // 2. Bottum Up Memoized DP Solution
 
+lli matrixChainBottomUp(int a[],int n)				// a[] is given dimension array of matrices
+{
+	lli dp[n][n];
+	
+	for(int i=0;i<n;i++)
+		dp[i][i] = 0;
+
+	for(int L=2;L<n;L++)
+	{
+		for(int i=1;i<n-L+1;i++)
+		{
+			int j = i+L-1;
+			
+			dp[i][j] = INT_MAX;
+			for(int k=i;k<j;k++)
+			{
+				lli temp = dp[i][k] + dp[k+1][j] + a[i-1]*a[j]*a[k];
+				if(temp<dp[i][j])
+					dp[i][j] = temp;
+			}
+		}
+	}
+
+	return dp[1][n-1];
+}
