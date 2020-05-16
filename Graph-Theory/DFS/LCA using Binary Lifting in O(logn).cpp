@@ -16,7 +16,7 @@ dp[1, n][1, log(n)] where dp[i][j] contains 2^j-th ancestor of node i. For
 computing the values of dp[][], the following recursion may be used :
 
 	dp[i][j] = parent[i] if j = 0 and
-	dp[i][j] = dp[dp[i][j – 1]][j – 1] if j > 0.
+	dp[i][j] = dp[dp[i][j â€“ 1]][j â€“ 1] if j > 0.
 
 We first check whether a node is an ancestor of other or not and if one node is ancestor 
 of other then it is the LCA of these two nodes otherwise we find a node which is not the 
@@ -72,7 +72,9 @@ int lca(int u,int v)
 	// Finding the ancestor of u which is at same level as v 
 	for(int i=logg;i>=0;i--)
 	{
-		if((level[u]-(int)pow(2,i))>=level[v])
+		// here (1<<i) means (int)pow(2,i)
+		// please note that using (1<<i) instead of using (int)pow(2,i) will improve the execution time a lot      
+		if((level[u]-(1<<i))>=level[v])      
 			u = dp[u][i];
 	}
 	
