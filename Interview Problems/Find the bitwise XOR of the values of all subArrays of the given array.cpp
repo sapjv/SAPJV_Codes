@@ -43,16 +43,16 @@ int main()
 		for(int i=1;i<=n;i++)
 			cin>>v[i];
 
-    // if n is even, then xor of the elements of all the subarrays will 
-    // be 0 ( bcoz all elements will appear even number of times ) 
+	        // if n is even, then xor of the elements of all the subarrays will 
+                // be 0 ( bcoz all elements will appear even number of times ) 
 		if(n%2==0) 
 			cout<<"0\n";
 		else
 		{
 			lli res = 0;
       
-      // taking xor of all alternate elements ( bcoz only alternate index
-      // elements ( 1,3,5,7... indices elements ) will appear odd times )
+		        // taking xor of all alternate elements ( bcoz only alternate index
+		        // elements ( 1,3,5,7... indices elements ) will appear odd times )
 			for(int i=1;i<=n;i+=2)  
 				res ^= v[i];
         
