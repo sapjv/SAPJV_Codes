@@ -50,24 +50,23 @@ using namespace std;
 #define M 100005
 #define ep emplace_back
 
-vector<int> path;               // this vector will store the path from source to destination
 vector<bool> visited(M);
 vector<int> adjList[M];
 
 // printing path from source to destination
-void print_path()
+void print_path(vector<int> path)
 {
     for(int x:path)
         cout<<x<<"->";          // ignore the last -> sign
 }
 
-void dfs(int src,int dest)
+void dfs(int src,int dest,vector<int> path)      // this path vector will store the path from source to destination
 {
     path.ep(src);
     
     if(src == dest)
     {
-        print_path();
+        print_path(path);
         return;
     }
     
@@ -79,7 +78,7 @@ void dfs(int src,int dest)
     {
         if(!visited[x])             // if the adjacent node is not visited yet
         {
-            dfs(x,dest);
+            dfs(x,dest,path);
             flag = 1;
         }
     }
@@ -111,7 +110,8 @@ int main()
         
     int source = 6 , destination = 8;
     
-    dfs(source,destination);
+    vector<int> path1;
+    dfs(source,destination,path1);
     
 }
 
