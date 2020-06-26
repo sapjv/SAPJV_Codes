@@ -41,11 +41,11 @@ Note : For sparse graphs, that is, graphs with far fewer than (|V|^2) edges, Dij
 
 ----------------------------------
 
-Note : For Dijkstra’s algorithm, it is always recommended to use heap (or priority queue) as the required
+Note : For Dijkstraâ€™s algorithm, it is always recommended to use heap (or priority queue) as the required
 	   operations (extract minimum and decrease key) match with speciality of heap (or priority queue). 
-	   However, the problem is, priority_queue doesn’t support decrease key. To resolve this problem, do
+	   However, the problem is, priority_queue doesnâ€™t support decrease key. To resolve this problem, do
 	   not update a key, but insert one more copy of it. So we allow multiple instances of same vertex 
-	   in priority queue. This approach doesn’t require decrease key operation and has below important
+	   in priority queue. This approach doesnâ€™t require decrease key operation and has below important
 	   properties.
 
 	   Whenever distance of a vertex is reduced, we add one more instance of vertex in priority_queue. 
@@ -56,7 +56,7 @@ Note : For Dijkstra’s algorithm, it is always recommended to use heap (or priori
 -----------------------------------
 
 Note : Dijkstra Algorithm does not work with negative edge weights. But, Unlike Dijkstra's algorithm, 
-	   the Bellman–Ford algorithm can be used on graphs with negative edge weights, as long as the 
+	   the Bellmanâ€“Ford algorithm can be used on graphs with negative edge weights, as long as the 
 	   graph contains no negative cycle reachable from the source vertex s. The presence of such 
 	   cycles means there is no shortest path, since the total weight becomes lower each time the 
 	   cycle is traversed.
@@ -75,9 +75,23 @@ typedef long long int lli;
 
 typedef pair<int,int> PII;
 
+int parent[10000];		// this array will store the parent node of each node in shortest path from source to destination
 vector<PII> adjList[10000];
 
 int nodes,edges;
+
+// this function will print the shortest path from source to destination
+// Question Link :  https://codeforces.com/contest/20/problem/C  ( this question needs to print shortest path b/w source and destination )
+void print_path(int j)
+{
+	if(parent[j] == -1)		// if current node is source ( we know that parent of source node is -1 ), then we'll print it and return from here.
+	{
+		cout<<j<<" ";
+		return;
+	}
+	print_path(parent[j]);
+	cout<<j<<" ";			// printing the nodes in the shortest path from source to destination
+}
 
 
 // Prints shortest paths from source to all other vertices 
@@ -109,6 +123,7 @@ void dijkstraShortestPath(int source)
 			{
 				distance[v] = distance[u] + weight;			                // Updating distance of v 
 				min_pq.push(make_pair(distance[v],v));
+				parent[v] = u;			// assigning parent of each node in the shortest path
 			}
 		}
 	}
@@ -136,8 +151,11 @@ int main()
 		adjList[v].ep(make_pair(weight,u));				// for undirected
 	}
 	
+	parent[0] = -1;			// parent of source node is -1
+	
 	dijkstraShortestPath(0);
 	
+	print_path(destination);
 } 
 
 
