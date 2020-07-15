@@ -45,7 +45,7 @@ int main()
 	ways[0] = 1;
 
 	// One by one consider given 3 moves and update the ways[] values after 
-    // the index greater than or equal to the value of the picked move
+    	// the index greater than or equal to the value of the picked move
 	for(int i=3;i<=n;i++)
 		ways[i] += ways[i-3];
 
