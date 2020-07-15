@@ -34,7 +34,6 @@ Auxiliary Space: O(N)
 
 int main()
 {
-
    	int n;
 	cin>>n;
 
