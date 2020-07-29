@@ -26,11 +26,11 @@ bool check_Palindrome(string str)
 
 void dfs(int i,int j,string s,int &ans)
 {
-	  // this is base case ( when current indices are out of range )
+    // this is base case ( when current indices are out of range )
     if(i>=n || j>=m)
         return;
     
-	  // when we reach at end ( bottom right corner i.e., matrix[n-1][m-1] ) 
+    // when we reach at end ( bottom right corner i.e., matrix[n-1][m-1] ) 
     if(i==n-1 && j==m-1)
     {
         s += matrix[i][j];
@@ -38,7 +38,7 @@ void dfs(int i,int j,string s,int &ans)
             ans++;
     }
     
-	  // note that we are moving to both of the neighbors of current element along with new string.
+    // note that we are moving to both of the neighbors of current element along with new string.
     dfs(i+1,j,s+matrix[i][j],ans);
     dfs(i,j+1,s+matrix[i][j],ans);
 }
