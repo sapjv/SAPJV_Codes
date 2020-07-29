@@ -3,7 +3,7 @@
 
 	### Number of palindromic paths in a matrix using Dynamic Programming ###
 
-Task :  	Given a matrix containing lower alphabetical characters only, we need to count number of palindromic 
+Task :  Given a matrix containing lower alphabetical characters only, we need to count number of palindromic 
 paths in given matrix. A path is defined as a sequence of cells starting from top-left cell and ending at 
 bottom-right cell. We are allowed to move to right and down only from current cell.
 
@@ -80,21 +80,21 @@ lli solve(int si,int sj,int ei,int ej)
 
 int main()
 {
-    int t;
-   	cin>>t;
-   	while(t--)
-   	{
-   		cin>>n>>m;
+    	int t;
+	cin>>t;
+	while(t--)
+	{
+		cin>>n>>m;
 
-   		for(int i=0;i<n;i++)
-   		{
-   			for(int j=0;j<m;j++)
-   				cin>>matrix[i][j];
-   		}
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<m;j++)
+				cin>>matrix[i][j];
+		}
 
-   		memset(dp,-1,sizeof(dp));
-   		
-   		lli res = solve(0,0,n-1,m-1);
-   		cout<<res<<"\n";
-   	}
+		memset(dp,-1,sizeof(dp));
+
+		lli res = solve(0,0,n-1,m-1);
+		cout<<res<<"\n";
+	}
 }
