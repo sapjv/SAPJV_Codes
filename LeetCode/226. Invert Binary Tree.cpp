@@ -71,7 +71,7 @@ TreeNode* invertTree(TreeNode* root)
         if(root == nullptr)
             return nullptr;
         
-        stack<TreeNode *> st;
+        stack<TreeNode *> st;		// note that this stack is of (TreeNode *) type
         st.push(root);
         while(!st.empty())
         {
@@ -106,7 +106,7 @@ TreeNode* invertTree(TreeNode* root)
         if(root == nullptr)
             return nullptr;
         
-        queue<TreeNode *> q;
+        queue<TreeNode *> q;		// note that this queue is of (TreeNode *) type
         q.push(root);
         
         while(!q.empty())
