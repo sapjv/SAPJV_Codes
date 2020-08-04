@@ -63,5 +63,82 @@ Because h belongs to O(n). Hence, the space complexity is O(n).
 
 // -------------------------------------------
 
+
+// Approach #2 (Iterative) : ( Using a stack - this is my own solution )
+
+TreeNode* invertTree(TreeNode* root) 
+{
+        if(root == nullptr)
+            return nullptr;
+        
+        stack<TreeNode *> st;
+        st.push(root);
+        while(!st.empty())
+        {
+            TreeNode *current = st.top();
+            st.pop();
+            
+            if(current == nullptr)
+                continue;
+            
+            TreeNode *Left = current->left;
+            TreeNode *Right = current->right;
+            
+            current->left = Right;
+            current->right = Left;
+            
+            st.push(current->left);
+            st.push(current->right);
+        }
+        
+        return root;
+}
+
+// ------------------------
+
+// Approach #3 (Iterative) : ( Using a queue - this is also my own solution )
+
+// Note : In below solution, everything is similar like Approach2 usng stack. The only change is to 
+// replace stack with queue. Just replaced stack with queue only.
+
+ TreeNode* invertTree(TreeNode* root) 
+ {
+        if(root == nullptr)
+            return nullptr;
+        
+        queue<TreeNode *> q;
+        q.push(root);
+        
+        while(!q.empty())
+        {
+            TreeNode *current = q.front();
+            q.pop();
+            
+            if(current == nullptr)
+                continue;
+            
+            TreeNode *Left = current->left;
+            TreeNode *Right = current->right;
+            
+            current->left = Right;
+            current->right = Left;
+            
+            q.push(current->left);
+            q.push(current->right);
+        }
+        
+        return root;
+ }
+
+
 /*
 
+Complexity Analysis of Approach 2 and 3 : 
+
+Since each node in the tree is visited / added to the stack and queue only once, the time complexity is O(n), where n is the 
+number of nodes in the tree.
+
+Space complexity is O(n), since in the worst case, the queue/stack will contain all nodes in one level of the binary tree. For 
+a full binary tree, the leaf level has ⌈n/2⌉ = O(n) leaves.
+
+*/
