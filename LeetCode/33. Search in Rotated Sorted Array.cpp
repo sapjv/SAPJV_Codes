@@ -176,3 +176,17 @@ Time Complexity: O(log n).
 2. Space Complexity: O(1). As no extra space is required.
 
 */
+
+/*
+
+Important Point : 
+
+How to handle duplicates?
+
+1. It doesn’t look possible to search in O(Logn) time in all cases when duplicates are allowed. For example 
+   consider searching 0 in {2, 2, 2, 2, 2, 2, 2, 2, 0, 2} and {2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}.
+
+2. It doesn’t look possible to decide whether to recur for the left half or right half by doing a constant 
+   number of comparisons at the middle.
+
+*/
