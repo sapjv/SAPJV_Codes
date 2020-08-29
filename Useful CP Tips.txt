@@ -1,0 +1,35 @@
+
+1.  If the sum/count of elements of the array is in the range of 1<=(sum/count)<=n ( or less range ) , then always try to avoid 
+    using map and unordered_map for storing the occurences of sum/count, because it may lead us to TLE. Instead try to create 
+    another array/vector of size n ( because the sum or count of elements of the array is in the range of 1<=sum<=n ) and then 
+    increment the occurences of the particular elements. There is a benefit of doing so : 
+
+        (i) As we know that map uses O(logn) time for inserting and deleting. Hence, it could lead us to TLE if the time limit is 
+        very strict. Similarly, unordered_map uses hash table, So, it may also lead us to O(n) time complexity in worst case and 
+        which again could lead us to TLE. Whereas, simple array/vector of size n will do our job in O(1) time. Hence, using 
+        vector/array for storing occurences can save us from TLE.
+        
+    Check out this problem and all my submissions too :   http://codeforces.com/problemset/problem/1352/E
+    
+    In this above problem, solution using map is giving TLE, whereas solution using unordered_map is getting accepted in 358ms time, 
+    whereas solution using simple array/vector of size n is getting accepted in 78ms time.
+    
+
+2.  We may use these two concepts ( prefix_sum + binary_search ) for solving some range based problems like this : 
+    Check out this problem and my ( prefix_sum + binary_search ) submission too :  http://codeforces.com/problemset/problem/279/B
+    
+
+3.  Whenever we need to increment lots of L to R ranges in an array by a particular value, then always try to use Difference Array concept.
+
+
+4.  Sometimes, We can use both set and priority_queue STL for solving the same task. This is how : 
+    Whenever we have such problem in which we need to insert a pair ( or pairs of pairs or whatever related with pairs ) in set or 
+    priority_queue along with some priority on first element of the pair and some other condition on second element of the pair, then 
+    we are advised to use set or priority_queue STL along with multiplying second element of the pair by -1. This multiplication 
+    by -1 is not compulsory but it is a trick to work easily with pairs in set/priority_queue STL. 
+    
+    If you want to learn more about this trick, check out this problem and my submissions using both set/priority_queue :  
+    http://codeforces.com/contest/1353/problem/D
+    
+    
+5.  
