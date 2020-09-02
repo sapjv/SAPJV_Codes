@@ -20,6 +20,23 @@ Function Return: The function returns the index of the first occurrence
 of sub-string, if the sub-string is not found it returns string::npos(string::pos 
 is static member with value as the highest possible for the size_t data structure).
 
+------------------------------
+
+Note for size_t :  size_t is an unsigned integral data type. Also, we can convert size_t to int too. 
+
+It’s a type which is used to represent the size of objects in bytes and is therefore used as the return 
+type by the sizeof operator. It is guaranteed to be big enough to contain the size of the biggest object 
+the host system can handle. Basically the maximum permissible size is dependent on the compiler; if the 
+compiler is 32 bit then it is simply a typedef(i.e., alias) for unsigned int but if the compiler is 64 bit 
+then it would be a typedef for unsigned long long. The size_t data type is never negative.
+
+size_t or any unsigned type might be seen used as loop variable as loop variables are typically greater than 
+or equal to 0.
+
+Note: When we use a size_t object, we have to make sure that in all the contexts it is used, including 
+arithmetic, we want only non-negative values. For instance, the following program would definitely give 
+the unexpected result: 
+
 */
 
 #include<bits/stdc++.h>
