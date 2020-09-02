@@ -32,4 +32,12 @@
     http://codeforces.com/contest/1353/problem/D
     
     
-5.  
+5.  Whenever you get any question in which we need to take MOD(1e9+7) or by some other value, then always take care of negative 
+    modular. I mean that if there is a subtraction operation in modular statement of solution, then always apply modular arithmetic
+    property of subtraction like this :    (a-b) % mod = ((a % mod) - (b % mod) +  mod ) % mod
+    
+    Otherwise, the final answer may result a negative number. Similary you may face multiplicative modulo inverse ( (a/b) % mod ) 
+    property in solving problem.
+    
+    
+6.  
