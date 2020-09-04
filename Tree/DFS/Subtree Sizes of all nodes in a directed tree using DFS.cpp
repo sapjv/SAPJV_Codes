@@ -1,4 +1,5 @@
-// this below solution is valid for both undirected and directed tree as we are using a visited array
+// This below solution is only valid for directed tree. For undirected tree, it is very obvious that the
+// subtree size of all the nodes are same ( size of the whole tree )
 
 // Note : A single node will have 1 as its subtree size ( because it will also be included in the subtree of itself )
 
