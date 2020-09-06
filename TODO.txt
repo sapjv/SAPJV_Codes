@@ -1,0 +1,8 @@
+
+Needs to solve these problems by DFS : 
+1.  http://codeforces.com/problemset/problem/429/A
+
+
+
+Needs to solve these problems by BFS : 
+1.  
