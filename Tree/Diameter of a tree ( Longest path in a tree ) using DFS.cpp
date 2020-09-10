@@ -160,3 +160,75 @@ int main()
    cout<<ans<<"\n";
 }
  
+
+
+//----------------------------------------
+
+// 3rd approach : using BFS ( we can solve this same problem using BFS too )
+// problem link :  http://codeforces.com/problemset/problem/690/C2 ( same problem )
+
+// Solution :
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define M 100005
+#define ep emplace_back
+
+int leaf;
+int ans = INT_MIN;
+int level[M] = {0};
+vector<bool> visited(M);
+vector<int> adjList[M];
+
+void bfs(int source)
+{
+   queue<int> q;
+   q.push(source);
+   level[source] = 0;
+   visited[source] = true;
+   while(!q.empty())
+   {
+      int current = q.front();
+      q.pop();
+      for(int x:adjList[current])
+      {
+         if(!visited[x])
+         {
+            visited[x] = true;
+            level[x] = level[current]+1;
+            if(level[x]>ans)
+            {
+               ans = level[x];
+               leaf = x;
+            }
+            q.push(x);
+         }
+      }
+   }
+}
+
+int main()
+{
+   int n,m;
+   cin>>n>>m;
+   
+   for(int i=1;i<=m;i++)
+   {
+      int u,v;
+      cin>>u>>v;
+      adjList[u].ep(v);
+      adjList[v].ep(u);
+   }
+   
+   bfs(1);          // first we'll find the level of each node and store the maximum level node as leaf
+   
+   memset(level,0,sizeof(level));
+   visited.assign(M,false);
+   
+   bfs(leaf);          // then we'll again start bfs from the leaf node and find the maximum level node from leaf ( that we'll be our answer )
+   
+   cout<<ans<<"\n";
+}
+
+
