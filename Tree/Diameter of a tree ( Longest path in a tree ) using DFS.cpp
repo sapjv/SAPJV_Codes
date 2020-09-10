@@ -7,23 +7,21 @@ Question Link :  https://www.spoj.com/problems/PT07Z/  ( check my solution )
 Useful Link :  https://www.quora.com/How-does-following-algorithm-for-finding-longest-path-in-tree-work
 		
 Definition : The Diameter of a tree ( Longest path in a tree ) is the length of the longest path (from one node to 
-			 another) in the tree. The length of a path is the number of edges we traverse from source to destination.
+	     another) in the tree. The length of a path is the number of edges we traverse from source to destination.
 				OR
-			 The diameter of a tree (sometimes called the width) is the number of nodes on the longest path between 
-			 two leaves in the tree.
+	     The diameter of a tree (sometimes called the width) is the number of nodes on the longest path between 
+             two leaves in the tree.
 			 
 			 
 Solution :  We'll discuss a DFS based solution. As we know that the longest path will always occur between two leaf 
-			nodes. So, We start DFS from any random node and then find which node is farthest from it using DFS. Let 
-			the node farthest be X. It is clear that X will always be a leaf node and a corner of DFS. Now if we start 
-			DFS from X and check the farthest node from it, we will get the diameter of the tree.	
+	    nodes. So, We start DFS from any random node and then find which node is farthest from it using DFS. Let 
+	    the node farthest be X. It is clear that X will always be a leaf node and a corner of DFS. Now if we start 
+	    DFS from X and check the farthest node from it, we will get the diameter of the tree.	
 			
 
 Algorithm :  There is a standard algorithm for finding longest path in undirected trees using two depth-first searches:
-
-			 Step 1 :  Start DFS from a random vertex v and find the farthest vertex from it; say it is v'.
-			 Step 2 :  Now start a DFS from v' to find the vertex farthest from it. This path is the longest path in 
-			 		   the graph.
+		 Step 1 :  Start DFS from a random vertex v and find the farthest vertex from it; say it is v'.
+		 Step 2 :  Now start a DFS from v' to find the vertex farthest from it. This path is the longest path in the graph.
 
 */
 
@@ -62,11 +60,6 @@ void dfs(int source,int count,int &maxCount)
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	
-//	freopen("input.txt","rt",stdin);
-	
 	int n;
 	cin>>n;
 	
@@ -94,11 +87,6 @@ int main()
 	int ans = maxCount-1;
 	cout<<ans<<"\n";
 }
-
-
-
-
-
 
 
 //---------------------------------
