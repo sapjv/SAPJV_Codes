@@ -104,6 +104,7 @@ int main()
 //---------------------------------
 
 // Solution 2 : using similar approach, but in different way :
+// problem link :  http://codeforces.com/problemset/problem/690/C2
 
 #include<bits/stdc++.h>
 using namespace std;
