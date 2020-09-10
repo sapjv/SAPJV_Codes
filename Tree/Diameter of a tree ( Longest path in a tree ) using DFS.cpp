@@ -94,3 +94,68 @@ int main()
 	int ans = maxCount-1;
 	cout<<ans<<"\n";
 }
+
+
+
+
+
+
+
+//---------------------------------
+
+// Solution 2 : using similar approach, but in different way :
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define M 100005
+#define ep emplace_back
+
+int leaf;
+int ans = INT_MIN;
+vector<bool> visited(M);
+vector<int> adjList[M];
+
+void dfs(int source,int &level)
+{
+   visited[source] = true;
+   for(int x:adjList[source])
+   {
+      if(!visited[x])
+      {
+         level++;
+         dfs(x,level);
+      }
+   }
+   if(ans<level)
+   {
+      ans = max(ans,level);
+      leaf = source;
+   }
+   level--;
+}
+
+int main()
+{  
+   int n,m;
+   cin>>n>>m;
+   
+   for(int i=1;i<=m;i++)
+   {
+      int u,v;
+      cin>>u>>v;
+      adjList[u].ep(v);
+      adjList[v].ep(u);
+   }
+   
+   int level = 0;
+   dfs(1,level);        // first we'll assign the level of each node and then we'll find which node has highest level ( we'll call it as leaf )
+   
+   visited.assign(M,false);
+   
+   level = 0;
+   dfs(leaf,level);        // then we'll again do dfs from the leaf and we'll get the highest level from leaf and that we'll be the diameter
+   
+   cout<<ans<<"\n";
+}
+ 
