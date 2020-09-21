@@ -219,7 +219,7 @@ vector<int> adjList[M];
 void bfs(int source)
 {
    queue<int> q;
-   q.push(source);
+   q.push(source);		// please note here we need to push source only ( not node 1 ) because while calling this bfs function again, source might be different.
    level[source] = 0;
    visited[source] = true;
    while(!q.empty())
