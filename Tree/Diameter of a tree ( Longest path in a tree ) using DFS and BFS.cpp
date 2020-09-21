@@ -148,6 +148,53 @@ int main()
    cout<<ans<<"\n";
 }
  
+//---------------------------------
+// Solution 3 : Another simple approach using simple DFS
+// problem link and my submission :   http://codeforces.com/contest/120/submission/93377504
+
+int leaf;
+int height = 0;
+vector<bool> visited(M);
+vector<int> adjList[M];
+
+void dfs(int source,int level)
+{
+   visited[source] = true;
+   for(int x:adjList[source])
+   {
+      if(!visited[x])
+      {
+         dfs(x,level+1);
+         if(level+1>height)
+         {
+            height = level+1;
+            leaf = x;
+         }
+      }
+   }
+}
+
+int main()
+{
+      int n,m;
+      cin>>n>>m;
+      
+      for(int i=0;i<m-1;i++)
+      {
+         int u,v;
+         cin>>u>>v;
+         adjList[u].ep(v);
+         adjList[v].ep(u);
+      }
+      
+      visited.assign(M,false);
+      dfs(1,0);
+      
+      visited.assign(M,false);
+      dfs(leaf,0);
+	
+      cout<<"diameter = "<<height;
+}
 
 
 //----------------------------------------
