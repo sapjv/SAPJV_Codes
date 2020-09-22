@@ -22,7 +22,7 @@ void dfs(int source)
       if(!visited[x])
       {
          dfs(x);
-         sum[source] += sum[x];			// here, we are adding all sums in children nodes of the current node
+         sum[source] += sum[x];	  // here, we are adding all sums in children nodes of the current node ( please note that it should be below to dfs() call )
       }
    }
    
