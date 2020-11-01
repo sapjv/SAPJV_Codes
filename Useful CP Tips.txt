@@ -40,4 +40,4 @@
     property in solving problem.
     
     
-6.  
+6.  Inorder traversal in BST ( Binary Search Tree ) prints the traversal in sorted order.
