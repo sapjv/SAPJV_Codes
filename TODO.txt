@@ -15,3 +15,5 @@ Needs to create Github Content :
 4. https://practice.geeksforgeeks.org/problems/sum-tree/1/
 5. https://practice.geeksforgeeks.org/problems/print-bst-elements-in-given-range/1/  - check all my submissions
 6. https://practice.geeksforgeeks.org/problems/sum-of-leaf-nodes/1/  - check all my submissions
+7. https://practice.geeksforgeeks.org/problems/size-of-binary-tree/1/
+8.
