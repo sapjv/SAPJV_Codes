@@ -1,7 +1,7 @@
 
 Needs to solve these problems by DFS : 
-1.  http://codeforces.com/problemset/problem/429/A
-
+1.  https://codeforces.com/problemset/problem/429/A
+2.  https://codeforces.com/problemset/problem/1167/C
 
 
 Needs to solve these problems by BFS : 
