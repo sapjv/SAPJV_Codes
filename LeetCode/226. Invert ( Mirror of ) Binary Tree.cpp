@@ -1,7 +1,7 @@
 
 /*
 
-Problem Link :  https://leetcode.com/problems/invert-binary-tree/
+Problem Link :  https://leetcode.com/problems/invert-binary-tree/   (OR)  https://practice.geeksforgeeks.org/problems/mirror-tree/1/
 
 Problem Description :  Invert a binary tree.
 
@@ -142,3 +142,28 @@ Space complexity is O(n), since in the worst case, the queue/stack will contain 
 a full binary tree, the leaf level has ⌈n/2⌉ = O(n) leaves.
 
 */
+
+// .........................
+
+// Approach 4 (similar as approach 3):
+
+class Solution {
+public:
+    TreeNode* invertTree(TreeNode* root) {
+        if(root == NULL)
+            return NULL;
+        queue<TreeNode *> q;
+        q.push(root);
+        while(!q.empty())
+        {
+            TreeNode *current = q.front();
+            q.pop();
+            if(!current)
+                continue;
+            swap(current->left,current->right);
+            q.push(current->left);
+            q.push(current->right);
+        }
+        return root;
+    }
+};
