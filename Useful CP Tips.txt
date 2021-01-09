@@ -41,3 +41,14 @@
     
     
 6.  Inorder traversal in BST ( Binary Search Tree ) prints the traversal in sorted order.
+
+7.  Suppose we have two strings s1 and s2 (length of s2 is less than 4/5), and we are asked to find the total number of subsequences (or something related 
+    which we could use in solving problem) of complete word s2 in the string s1, then what we will do is this: jitne bhi characters s2 me honge, utne hi nested for 
+    loops lga ke direct s2 subsequence search kr lenge (under the consideration of 10^8 instructions per second).....like this: 
+    
+    In this question:   https://codeforces.com/problemset/problem/894/A    ,, we are asked to find total number of subsequences "QAQ" in the given string s.
+    
+    Sp, we have used 3 nested for loops separately for 'Q', 'A', 'Q' and then we are finding in given s. 
+    
+    So, for simple problems or if the constraints are small, we can use this trick to solve the problem. I have submitted two different solution for this 
+    problem, it is must to check them both.
