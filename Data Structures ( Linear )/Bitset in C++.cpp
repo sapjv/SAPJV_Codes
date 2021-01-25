@@ -340,3 +340,6 @@ string getBinaryRep(int N)
 	}
 	return str;
 }
+
+
+
