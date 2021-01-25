@@ -20,9 +20,9 @@ int main()
     backward that is for 10110 like this : (n-1)th index,(n-2)th index,(n-3)th index,.....,2nd index,1st index,0th index.
     
     We can construct a bitset using integer number as well as binary string via constructors which is shown in 
-    below code. The size of bitset is fixed at compile time that is, it can’t be changed at runtime.
+    below code. The size of bitset is fixed at compile time that is, it canâ€™t be changed at runtime.
     The main function defined for bitset class are operator [], count(), size(), set(), reset() and many more 
-    they are explained in below code –
+    they are explained in below code â€“
     
     */
     
@@ -318,4 +318,25 @@ int main()
     cout << (bset1 & bset2) << endl; // 0010 
     cout << (bset1 | bset2) << endl; // 0111 
     cout << (bset1 ^ bset2) << endl; // 0101 
+}
+
+
+// -----------------------------------------------------------------------------
+
+
+// Problem Link: https://practice.geeksforgeeks.org/problems/binary-representation5003/1/?
+
+string getBinaryRep(int N)
+{
+	string str = "";
+	
+	// this loop will run exactly 30 times ( not 29 times ) because we are checking value of i>0. So, it will iterate till i = 2^0 = 1>0.
+	for(long int i=1<<29;i>0;i=i/2)			// this is very useful ( think about it ) - N will be perfect power of 2 everytime.
+	{
+	    if(N&i)
+		str += "1";
+	    else
+		str += "0";
+	}
+	return str;
 }
