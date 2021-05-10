@@ -14,6 +14,11 @@
     In this above problem, solution using map is giving TLE, whereas solution using unordered_map is getting accepted in 358ms time, 
     whereas solution using simple array/vector of size n is getting accepted in 78ms time.
     
+    Example2: check the difference between accepted time of these two solutions for the same problem:
+    
+    1. https://codeforces.com/contest/1399/submission/115838154  (accepted time is 732ms if we use map STL)
+    2. https://codeforces.com/contest/1399/submission/115838505  (accepted time is just 62ms if we use simple vector for storing count)
+    
 
 2.  We may use these two concepts ( prefix_sum + binary_search ) for solving some range based problems like this : 
     Check out this problem and my ( prefix_sum + binary_search ) submission too :  http://codeforces.com/problemset/problem/279/B
