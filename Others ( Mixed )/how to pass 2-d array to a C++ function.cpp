@@ -5,11 +5,11 @@
 const int N1=20, M1=20;
 int n,m;
 bool isSorted(int temp[N1][M1]){
-	for(int i=0;i<n;i++){
-		for(int j=0;j<m;j++){
-			temp[i][j] *= 5;
-		}
+    for(int i=0;i<n;i++){
+	for(int j=0;j<m;j++){
+	    temp[i][j] *= 5;
 	}
+    }
 }
 int main(){
     cin>>n>>m;
