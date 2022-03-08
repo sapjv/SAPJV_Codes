@@ -13,8 +13,8 @@ vector<int> inorderTraversal(TreeNode* root) {
 			currentNode = currentNode -> left;
 		}
 		currentNode = st.top();
-		result.emplace_back(currentNode->val);
 		st.pop();
+		result.emplace_back(currentNode->val);
 		currentNode = currentNode->right;
 	}
 	return result;
