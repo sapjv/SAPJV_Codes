@@ -154,4 +154,7 @@ Value of C(5, 2) is 10
 Value of C(5, 2) is 10  // Value of C[5][2] is 10
 Value of C(5, 2) is 10
 
+Value of C(5, 12) is 0
+Value of C(5, 12) is 0
+Value of C(5, 12) is 0
 */
