@@ -18,10 +18,9 @@ void buildTree(int index, int s, int e){
 }
 
 void update(int index, int s, int e, int pos, int value){
-    if(pos>e || pos<s){
+    if(pos>e || pos<s){     // this is important
         return;
     }
-
     if(s==e){
         segTree[index] = value;
         return;
